@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O IP funciona. A Internet que construímos sobre ele, não — PRP Journal</title>
+  <meta name="description" content="Bloqueios colaterais, plataformas coercíveis e pressões sobre comunicações privadas mostram por que precisamos repensar a arquitetura da rede.">
+  
+  <link rel="canonical" href="https://journal.prp-protocol.org/pt/artigos/o-ip-funciona/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/"><span class="brand-mark">PRP/</span><span class="brand-name">PRP Journal</span></a>
+      <div class="header-actions"><nav class="language-nav" aria-label="Language"><a href="/">EN</a><a href="/pt/" aria-current="page">PT</a></nav></div>
+    </div>
+  </header>
+  <main class="article-shell">
+  <header class="article-header">
+    <span class="eyebrow">Fundamentos do PRP · artigo 1</span>
+    <h1>O IP funciona. A Internet que construímos sobre ele, não</h1>
+    <p class="article-deck">Bloqueios colaterais, plataformas coercíveis e pressões sobre comunicações privadas mostram por que precisamos repensar a arquitetura da rede.</p>
+    <div class="article-meta"><span>PRP Project</span><span>approved</span><a href="/articles/ip-works/">English →</a></div>
+  </header>
+  <div class="article-layout">
+    <article class="prose"><p>Em 1974, Vint Cerf e Robert Kahn propuseram uma solução para um problema ao mesmo tempo técnico e político: como permitir que redes diferentes, construídas com tecnologias diferentes e administradas por organizações diferentes, pudessem conversar sem que uma delas precisasse se tornar a rede central?</p>
+<p>A resposta viria a formar a base da Internet. Em vez de impor uma infraestrutura única, o protocolo permitiria criar uma rede de redes. Cada participante poderia operar sua própria infraestrutura, desde que compartilhasse um conjunto mínimo de convenções para transportar pacotes.</p>
+<p>A escolha funcionou de maneira extraordinária. Meio século depois, o IP conecta redes domésticas, universidades, empresas, satélites, telefones e centros de dados. Ele atravessou mudanças tecnológicas que seus criadores não poderiam ter previsto.</p>
+<p>Por que, então, uma disputa com uma empresa pode retirar de um país inteiro uma rede social? Por que bloquear um endereço usado por um serviço ilícito pode derrubar milhares de serviços inocentes? Por que proteger uma chamada com criptografia pode tornar sua operação incompatível com exigências de supervisão estatal?</p>
+<p>O problema não é que o IP tenha parado de funcionar. O problema é que passamos a exigir dele — e das estruturas construídas ao seu redor — coisas para as quais ele não foi desenhado.</p>
+<h2>A promessa de uma rede aberta</h2>
+<p>As redes que Cerf e Kahn queriam interligar eram incompatíveis. A ARPANET, redes de rádio por pacotes e redes por satélite tinham características diferentes. A solução não poderia depender de reformar cada uma delas.</p>
+<p>Cerf posteriormente descreveu o objetivo como a criação de protocolos universais, não proprietários, não patenteados e livres de controle por um fornecedor. As redes existentes não precisariam saber que faziam parte de algo maior. Bastaria um gateway — o antepassado dos roteadores atuais — capaz de encaminhar os pacotes entre elas. (<a href="https://www.scientificamerican.com/article/internet-pioneer-cerf/">Scientific American</a>)</p>
+<p>Dessa arquitetura surgiram princípios duradouros. O núcleo da rede deveria fazer relativamente pouco: transportar datagramas da forma mais flexível possível. Funções que exigissem conhecimento das aplicações permaneceriam nas pontas. O estado importante de uma conversa deveria pertencer aos participantes, não a equipamentos intermediários. Esse princípio é conhecido como <em>fate sharing</em>. (<a href="https://www.rfc-editor.org/rfc/rfc3724.html">RFC 3724</a>)</p>
+<p>Isso não significava ausência de coordenação. Protocolos comuns, números não conflitantes e decisões sobre parâmetros globais sempre foram necessários. ARPA, o Network Information Center, IANA, Jon Postel e, depois, instituições como IETF, registros regionais e ICANN exerceram papéis de coordenação.</p>
+<p>A distinção é fundamental: interoperabilidade exige coordenação, mas coordenação não precisa significar soberania sobre os participantes.</p>
+<h2>A Internet sabe onde</h2>
+<p>Um endereço IP ajuda a rede a decidir para onde encaminhar um pacote. Ele não identifica necessariamente uma pessoa, uma organização, uma publicação ou mesmo um único serviço.</p>
+<p>Um servidor pode mudar de endereço. Milhares de sites podem compartilhar o mesmo endereço. Um serviço global pode responder por muitos endereços simultaneamente. Uma conexão doméstica pode reunir dezenas de dispositivos atrás de um único endereço público. Redes móveis podem reunir milhares de assinantes.</p>
+<p>Apesar disso, usamos endereços de infraestrutura para executar decisões sobre conteúdo.</p>
+<p>É uma incompatibilidade semântica: queremos atingir uma conduta, uma obra ou um responsável, mas ordenamos à rede que bloqueie uma localização. É como tentar apreender um livro interditando o prédio em que alguém disse tê-lo visto.</p>
+<p>O problema se intensifica com nuvens e redes de distribuição de conteúdo. A mesma infraestrutura atende clientes sem relação entre si. Um endereço deixa de ser sequer uma aproximação razoável de um serviço.</p>
+<p>Thiago Ayub e Pedro de Botelho Marcos analisaram 304 ordens brasileiras de bloqueio emitidas entre dezembro de 2022 e junho de 2025, envolvendo cerca de 26 mil domínios. O estudo apresentado no IX Fórum 19 mostra como bloqueios por IP podem atingir uma quantidade muito maior de domínios não relacionados ao alvo original. (<a href="https://minhaagenda.nic.br/files/apresentacao/arquivo/2392/16.pdf">Apresentação</a>)</p>
+<p>Essa preocupação já integra os princípios brasileiros de governança da Internet. O sétimo item do Decálogo do CGI.br, aprovado em 2009, estabelece a <strong>inimputabilidade da rede</strong>: o combate a ilícitos deve “atingir os responsáveis finais e não os meios de acesso e transporte”. O princípio não elimina a responsabilização; ele procura direcioná-la ao agente da conduta, preservando a infraestrutura comum, a liberdade, a privacidade e os direitos humanos. (<a href="https://www.cgi.br/guia-internet-democracia-e-eleicoes/principios/">CGI.br</a>)</p>
+<p>O CGI.br não está isolado. O Regulamento de Serviços Digitais da União Europeia mantém a proteção do <em>mere conduit</em> — o intermediário que apenas transmite — e veda obrigações gerais de monitoramento. Os Princípios de Manila, elaborados por organizações da sociedade civil de diferentes países, também defendem que intermediários não respondam por conteúdo de terceiros que não modificaram e que restrições sejam específicas, necessárias e proporcionais. (<a href="https://eur-lex.europa.eu/legal-content/PT/TXT/?uri=CELEX:32022R2065">União Europeia</a>, <a href="https://manilaprinciples.org/principles.html">Princípios de Manila</a>)</p>
+<p>A rede obedece. O problema é que ela não conhece o significado jurídico daquilo que está encaminhando.</p>
+<figure><img src="/visuals/pt/endereco-conteudo.svg" alt="Uma ordem dirigida a um conteúdo pode atingir vários serviços quando executada por bloqueio de IP." loading="lazy"><figcaption>Uma ordem dirigida a um conteúdo pode atingir vários serviços quando executada por bloqueio de IP.</figcaption></figure>
+<h2>Quando a disputa alcança quem não é parte</h2>
+<p>Em agosto de 2024, o Supremo Tribunal Federal determinou a suspensão completa do X no Brasil. A plataforma permaneceria indisponível até cumprir decisões, quitar multas e indicar representante legal no país.</p>
+<p>A medida não atingiu apenas a empresa. Pessoas naturais e jurídicas que empregassem subterfúgios tecnológicos, como VPN, para fraudar a suspensão e continuar utilizando o X ficaram sujeitas a multa diária de R$ 50 mil. A Primeira Turma do STF confirmou a decisão e esclareceu esse alcance. (<a href="https://noticias.stf.jus.br/postsnoticias/stf-confirma-decisao-que-suspendeu-o-x-antigo-twitter-em-todo-o-pais/">STF</a>)</p>
+<p>Não se tratava de proibir toda instalação ou utilização de VPN. A sanção se dirigia à burla deliberada do bloqueio. Ainda assim, a consequência merece ser observada: cidadãos e empresas que não integravam a disputa processual entre a Corte e a plataforma passaram a enfrentar uma sanção pecuniária por manter uma comunicação que, até a ordem, era lícita.</p>
+<p>É possível sustentar que nenhuma empresa está acima da lei e, ao mesmo tempo, perguntar se retirar uma infraestrutura de comunicação de toda a sociedade — e ameaçar seus usuários com multa — é uma resposta necessária e proporcional ao descumprimento do provedor.</p>
+<p>O caso expõe uma propriedade da arquitetura de plataformas: quando identidade, público, publicação e distribuição pertencem a uma empresa, controlar a empresa é uma maneira economicamente barata de controlar todas essas relações de uma só vez.</p>
+<h2>Quando privacidade se torna incompatibilidade regulatória</h2>
+<p>Em março de 2026, o Discord concluiu a adoção de criptografia de ponta a ponta para chamadas de voz, vídeo e transmissões Go Live. Com E2EE, o servidor ajuda a conectar os participantes, mas não possui as chaves necessárias para observar o conteúdo audiovisual da sessão.</p>
+<p>Em agosto, após a morte de uma adolescente e a investigação de grupos acusados de indução à automutilação e ao suicídio, a ANPD suspendeu no Brasil o Go Live, o compartilhamento de tela e recursos equivalentes. A reativação dependeria da demonstração de medidas adequadas de proteção e de autorização expressa da Agência. (<a href="https://www.gov.br/anpd/pt-br/centrais-de-conteudo/documentos-tecnicos-orientativos/despacho_decisorio_3_discord-inc.pdf/%40%40display-file/file">Despacho Decisório nº 3/2026</a>)</p>
+<p>A proteção de crianças e adolescentes é uma obrigação real. Grupos que induzem vítimas à violência não podem ser romantizados como exercício de liberdade. Mas a decisão produz uma pergunta técnica inevitável: como uma plataforma detectará automaticamente, no servidor e em tempo real, aquilo que a criptografia impede o servidor de ver?</p>
+<p>A ANPD não ordenou literalmente uma porta dos fundos, nem prescreveu inspeção no dispositivo. Essas seriam possíveis respostas, não o texto da decisão. Ainda assim, as alternativas disponíveis têm consequências:</p>
+<ul>
+<li>analisar áudio e vídeo antes de criptografá-los;</li>
+<li>analisar o conteúdo depois de descriptografado no dispositivo receptor;</li>
+<li>introduzir um sistema de supervisão como participante;</li>
+<li>restringir funcionalidade por identidade ou idade;</li>
+<li>depender de denúncias acompanhadas de evidências;</li>
+<li>analisar metadados e comportamento;</li>
+<li>ou retirar a funcionalidade daquela jurisdição.</li>
+</ul>
+<p>Algumas alternativas preservam matematicamente a criptografia do transporte, mas eliminam a confidencialidade na ponta. Uma comunicação não se torna privada apenas porque o canal é cifrado: é preciso perguntar o que o programa observa antes de cifrar e depois de decifrar.</p>
+<figure><img src="/visuals/pt/e2ee-pontas.svg" alt="A criptografia protege o transporte, enquanto o conteúdo permanece disponível nas duas pontas." loading="lazy"><figcaption>A criptografia protege o transporte, enquanto o conteúdo permanece disponível nas duas pontas.</figcaption></figure>
+<h2>Os mesmos pontos de controle, em escalas diferentes</h2>
+<p>O Brasil não possui hoje um equivalente direto ao Grande Firewall chinês ou ao sistema TSPU russo. As instituições, a escala, a permanência das medidas e as possibilidades de contestação são diferentes. Confundir essas realidades enfraqueceria qualquer crítica séria.</p>
+<p>Mas os pontos técnicos de controle são reconhecíveis.</p>
+<p>Na China, medições do Citizen Lab documentam adulteração de DNS e outras formas de filtragem no Grande Firewall. Em Xinjiang, a ONU documentou um sistema muito mais amplo, reunindo inspeção de dispositivos, coleta biométrica e vigilância associada à detenção de integrantes de minorias. (<a href="https://citizenlab.ca/research/gfwatch-a-longitudinal-measurement-platform-built-to-monitor-chinas-dns-censorship-at-scale/">GFWatch</a>)</p>
+<p>Na Rússia, provedores são obrigados a instalar os chamados <a href="https://www.hrw.org/report/2025/07/30/disrupted-throttled-and-blocked/state-censorship-control-and-increasing-isolation">TSPU</a>, sigla russa para “meios técnicos de combate a ameaças”. Esses equipamentos permitem que o Estado empregue inspeção profunda de pacotes para filtrar, estrangular e redirecionar o tráfego de redes privadas de forma centralizada. A infraestrutura fisicamente distribuída permanece, mas seu controle lógico é concentrado.</p>
+<p>A lição não é que toda ordem de bloqueio transforma imediatamente uma democracia num regime autoritário. É outra: capacidades técnicas sobrevivem às intenções que justificaram sua criação. Uma infraestrutura instalada para combater pirataria, proteger crianças ou executar uma decisão legítima pode ser usada amanhã por outra autoridade, contra outros alvos e com menos salvaguardas.</p>
+<p>Uma arquitetura política prudente não pergunta apenas se confia no governante atual. Pergunta quanto poder o sistema entregaria ao pior governante possível.</p>
+<h2>O vazio preenchido pelas plataformas</h2>
+<p>Não foi o IP, sozinho, que criou essa concentração. O protocolo não criou redes sociais, lojas de aplicativos, provedores de identidade, mecanismos de busca ou nuvens globais.</p>
+<p>Mas ele também não ofereceu respostas para várias necessidades que se tornaram centrais:</p>
+<ul>
+<li>provar que uma identidade pertence a seu controlador;</li>
+<li>localizar informação independentemente do servidor que a hospeda;</li>
+<li>verificar conteúdo sem confiar no canal que o entregou;</li>
+<li>transportar relações sociais entre serviços;</li>
+<li>descobrir comunidades sem um catálogo soberano;</li>
+<li>replicar publicações sem entregar controle ao hospedeiro;</li>
+<li>moderar abusos sem observar preventivamente todas as conversas.</li>
+</ul>
+<p>As plataformas preencheram esses vazios. Em troca de conveniência, passaram a controlar contas, públicos, reputações e arquivos sociais. A Internet continuou descentralizada no encaminhamento de pacotes, enquanto a experiência social se centralizou nas aplicações.</p>
+<p>Essa concentração já sustenta uma forma de vigilância em escala populacional. Em 2025, 81% dos usuários brasileiros de Internet utilizavam redes sociais. As próprias políticas das plataformas descrevem coleta e processamento de conteúdo, metadados, relações, interações, características dos dispositivos, localização e atividade recebida de parceiros externos. Em relatório sobre grandes redes sociais e serviços de vídeo, a Comissão Federal de Comércio dos Estados Unidos classificou práticas desse tipo como uma vasta vigilância voltada à monetização de informações pessoais. (<a href="https://www.cetic.br/media/analises/tic_domicilios_2025_principais_resultados.pdf">TIC Domicílios 2025</a>, <a href="https://www.facebook.com/policy">Política de Privacidade da Meta</a>, <a href="https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-staff-report-finds-large-social-media-video-streaming-companies-have-engaged-vast-surveillance">FTC</a>)</p>
+<p>Essa vigilância não decorre hoje apenas de uma escolha comercial. O regime regulatório brasileiro acrescentou uma camada compulsória: exige aferição de idade, atuação proativa, identificação de ilícitos e contas infantis e monitoramento contínuo de riscos. Plataformas privadas passam, assim, a exercer funções de supervisão determinadas pelo poder público, além da coleta que já realizam por seus próprios modelos de negócio. (<a href="https://www.gov.br/anpd/pt-br/assuntos/marco-civil-da-internet">ANPD — obrigações das plataformas</a>)</p>
+<p>Isso não significa que o Estado leia diretamente e de forma contínua todas as comunicações. Significa que plataformas de alcance populacional são obrigadas a manter capacidades de classificação, detecção e intervenção sobre seus usuários. O resultado é uma infraestrutura híbrida: criada também para fins comerciais, mas convertida por regulação em instrumento privado de supervisão compulsória. Requisições de dados e acesso estatal constituem uma camada adicional, não a única forma pela qual o poder público participa desse sistema.</p>
+<p>O próprio Cerf reconheceu posteriormente uma hipótese que não se sustentou. Ele imaginara uma rede completamente aberta, na qual qualquer computador pudesse interagir com outro e cada ponta se defendesse. Na prática, surgiram firewalls, perímetros e redes privadas. (<a href="https://archive.computerhistory.org/resources/access/text/2012/04/102658186-05-01-acc.pdf">História oral</a>)</p>
+<p>Cada camada de proteção acrescentou intermediários. Intermediários úteis se tornaram intermediários necessários. Intermediários necessários se tornaram pontos de coerção.</p>
+<h2>Um protocolo funcional em validação</h2>
+<p>O PRP parte da constatação de que não basta construir outra plataforma sobre a mesma estrutura de dependência. Essa constatação já produziu um protocolo funcional. O trabalho atual não se limita à ideação: envolve validar seu comportamento, estabilizar interfaces e consolidar as propriedades que a arquitetura pretende oferecer.</p>
+<p>Uma arquitetura diferente precisaria separar identidade de localização, permitir que conteúdo fosse verificado independentemente de sua origem e tornar relações sociais portáveis. Precisaria admitir múltiplas rotas, hospedeiros e mecanismos de descoberta. Precisaria preservar a opacidade da comunicação privada inclusive diante do fato de que ela pode ser usada para fins criminosos. O protocolo não inspeciona o conteúdo e torna impossível, em sua própria camada, detectar ou impedir essas condutas. Prevenção, investigação e responsabilização precisam ocorrer nas pontas e nas instituições externas ao protocolo, a partir de evidências obtidas legitimamente. E seria necessário coordenar identificadores e regras sem transformar essa coordenação em soberania central.</p>
+<p>Ter uma implementação funcional também não encerra essas questões. Redes par a par podem ser observadas, bloqueadas ou capturadas. Sistemas federados podem recriar concentração em poucos servidores. Identidades criptográficas podem ser seguras e, ainda assim, difíceis de recuperar ou moderar. Replicação pode preservar tanto conhecimento legítimo quanto material criminoso.</p>
+<p>O PRP encontra-se, portanto, numa fase concreta de validação e estabilização: há protocolo, código e experimentos capazes de sustentar a discussão, mas ainda há decisões que precisam ser testadas sob condições diversas antes de serem tratadas como definitivas. Esta série acompanhará esse processo, relacionando as escolhas técnicas às perguntas sociais e institucionais que as motivaram.</p>
+<p>A primeira delas é esta:</p>
+<blockquote><p>Se toda rede global necessita de padrões, identificadores e decisões comuns, como coordená-los sem criar uma autoridade soberana sobre identidade, descoberta, publicação e comunicação?</p></blockquote>
+<p>Esse será o próximo passo desta jornada de validação.</p></article>
+    
+  </div>
+</main>
+  <footer class="site-footer"><div class="shell">PRP Project · coordenação sem soberania central</div></footer>
+</body>
+</html>

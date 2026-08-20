@@ -1,0 +1,15 @@
+{
+  "target": "public",
+  "public_url": "https://journal.prp-protocol.org",
+  "generated": "2026-08-20",
+  "articles": [
+    {
+      "slug": "ip-works",
+      "status": "approved"
+    },
+    {
+      "slug": "o-ip-funciona",
+      "status": "approved"
+    }
+  ]
+}
