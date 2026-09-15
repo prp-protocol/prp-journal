@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coordenação sem soberania — PRP Journal</title>
+  <meta name="description" content="Uma rede global precisa de regras comuns. Não precisa de uma autoridade capaz de admitir participantes, controlar identidades ou autorizar publicações.">
+  
+  <link rel="canonical" href="https://journal.prp-protocol.org/pt/artigos/coordenacao-sem-soberania/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/pt/"><span class="brand-mark">PRP/</span><span class="brand-name">PRP Journal</span></a>
+      <div class="header-actions"><nav class="language-nav" aria-label="Language"><a href="/">EN</a><a href="/pt/" aria-current="page">PT</a></nav></div>
+    </div>
+  </header>
+  <main class="article-shell">
+  <header class="article-header">
+    <span class="eyebrow">Fundamentos do PRP · artigo 2</span>
+    <h1>Coordenação sem soberania</h1>
+    <p class="article-deck">Uma rede global precisa de regras comuns. Não precisa de uma autoridade capaz de admitir participantes, controlar identidades ou autorizar publicações.</p>
+    <div class="article-meta"><span>PRP Project</span><a href="/articles/coordination-without-sovereignty/">English →</a></div>
+  </header>
+  <div class="article-layout">
+    <article class="prose"><p>Uma rede sem coordenação não é uma rede. Se dois programas discordam sobre o formato de uma mensagem, não conseguem interpretá-la. Se duas redes usam identificadores incompatíveis, não sabem para onde encaminhar dados. Se cada implementação decide sozinha o que uma assinatura significa, nenhuma delas consegue verificar a outra.</p>
+<p>Interoperabilidade exige acordos.</p>
+<figure><img src="/visuals/editorial/002-coordination-without-sovereignty.webp" alt="Equipes independentes testam a interoperabilidade de suas implementações em um laboratório compartilhado." loading="lazy"><figcaption>Equipes independentes testam a interoperabilidade de suas implementações em um laboratório compartilhado.</figcaption></figure>
+<p>Esse fato costuma levar a uma conclusão apressada: se regras comuns são necessárias, alguma autoridade precisa defini-las, executá-las e decidir quem pode participar. Mas coordenação e soberania não são a mesma coisa. A primeira permite que agentes independentes cooperem. A segunda concede a alguém poder final sobre os demais.</p>
+<p>A diferença parece abstrata até uma regra técnica se tornar instrumento de admissão, exclusão ou vigilância. Quem controla um identificador indispensável pode apagar uma presença. Quem opera o único diretório pode tornar alguém inlocalizável. Quem responde juridicamente por tudo o que transporta adquire um incentivo para observar todas as comunicações.</p>
+<p>O primeiro artigo desta série mostrou como a arquitetura condiciona as intervenções possíveis. Este dá um passo anterior: pergunta como compartilhar regras sem criar um soberano sobre a rede.</p>
+<figure><img src="/visuals/pt/coordenacao-local.svg" alt="Um protocolo comum conecta agentes que mantêm políticas locais diferentes, sem uma aprovação central." loading="lazy"><figcaption>Um protocolo comum conecta agentes que mantêm políticas locais diferentes, sem uma aprovação central.</figcaption></figure>
+<h2>O padrão descreve; não precisa mandar</h2>
+<p>A Internet oferece um exemplo imperfeito, mas instrutivo. A IETF produz especificações técnicas para que implementações desenvolvidas por pessoas e organizações diferentes possam funcionar juntas.</p>
+<p>Sua declaração de missão, a <a href="https://datatracker.ietf.org/doc/rfc3935/">RFC 3935</a>, descreve processo aberto, competência técnica, consenso aproximado e experiência de implementação. Ao definir “padrão”, o documento faz uma distinção decisiva: uma especificação diz como realizar determinada função de modo interoperável; não pretende obrigar sua adoção nem policiar seu uso.</p>
+<p>Isso não elimina poder, disputas ou barreiras de participação na padronização. Também não torna toda decisão técnica neutra. A própria RFC reconhece escolhas como controle descentralizado e fortalecimento dos usuários nas pontas. O que o modelo demonstra é algo mais limitado e valioso: regras compartilhadas podem ser publicadas para adoção e implementação independentes sem que cada pacote precise de autorização da organização que escreveu a regra.</p>
+<p>O padrão coordena comportamentos. Ele não precisa comandar participantes.</p>
+<h2>Muitas decisões locais, uma rede global</h2>
+<p>O roteamento oferece outro exemplo. A Internet é formada por redes autônomas que escolhem como se conectar e por onde encaminhar tráfego. Elas compartilham protocolos e identificadores, mas não consultam um controlador mundial antes de cada decisão.</p>
+<p>A Internet Society reúne essa propriedade sob a ideia de <a href="https://www.internetsociety.org/resources/doc/2020/internet-impact-assessment-toolkit/critical-properties-of-the-internet/">gestão descentralizada</a>: decisões locais, protocolos comuns e um sistema distribuído produzem alcance global.</p>
+<p>O exemplo não deve ser romantizado. Operadores dominantes, registros de recursos, acordos comerciais e governos limitam escolhas reais. Erros ou ações maliciosas podem propagar rotas indevidas. Coordenação distribuída não significa ausência de dependências; significa que nenhuma decisão operacional única é, por desenho, a autorização universal para a rede existir.</p>
+<p>Essa diferença sugere um critério. Um componente coordenador aproxima-se da soberania quando sua decisão é simultaneamente obrigatória, exclusiva e insubstituível. Quanto mais difícil for verificar, contestar ou substituir essa decisão, maior será o poder acumulado.</p>
+<h2>Números comuns não exigem um cadastro mundial de participantes</h2>
+<p>A Internet atual combina formas diferentes de coordenação numérica. A IANA mantém registros de parâmetros para que, por exemplo, um código de protocolo tenha o mesmo significado em implementações independentes. Também coordena os espaços globais de endereços IP e números de sistemas autônomos, distribuídos hierarquicamente por registros regionais. Nos dois casos há números, mas as funções são distintas: uma registra o vocabulário do protocolo; a outra aloca recursos operacionais que precisam ser globalmente únicos. (<a href="https://www.iana.org/about">IANA</a>, <a href="https://www.iana.org/numbers">recursos numéricos</a>)</p>
+<p>O PRP precisa da primeira forma de coordenação. Versões, suites criptográficas, tipos e campos devem possuir interpretação interoperável. Por isso suas especificações mantêm registros públicos, versionados e verificáveis. Alterar o significado de uma atribuição publicada exige outro valor ou outra versão.</p>
+<p>Isso não cria um plano mundial de numeração dos agentes. Identidades autocertificantes derivam do próprio material criptográfico. Identificadores de relações, handles de sessões e seletores de rota pertencem a contextos qualificados e podem repetir o mesmo valor numérico em contextos independentes. Não existe uma repartição mundial da qual cada pessoa precise receber um número antes de participar.</p>
+<p>As especificações atuais do PRP não solicitam ação da IANA. Isso não é uma promessa de isolamento institucional: uma futura padronização pode registrar parâmetros por processos públicos. A propriedade arquitetural é outra. Mesmo que os códigos comuns sejam futuramente publicados num registro externo, a IANA não passa a emitir identidades, relações, sessões, rotas ou permissões do PRP.</p>
+<p>Independência operacional e coordenação de protocolo são compatíveis. Todos precisam concordar sobre o que um campo significa; ninguém precisa consultar um cadastro mundial para decidir quem pode usar aquele campo numa relação local.</p>
+<h2>Quando administrar significa autorizar</h2>
+<p>Nem todo centro de coordenação é evitável. Parâmetros globais precisam evitar colisões. Versões precisam ser reconhecidas. Algumas relações dependem de declarações de terceiros. O problema não é a mera existência de um serviço especializado, mas o alcance de seu poder.</p>
+<p>Há uma diferença entre publicar uma lista verificável e possuir o único catálogo; entre atestar uma relação e conceder identidade; entre oferecer um caminho de descoberta e ser capaz de tornar alguém invisível em todos os caminhos.</p>
+<p>Plataformas contemporâneas frequentemente acumulam essas funções. A mesma empresa cria a conta, define o nome, armazena o conteúdo, escolhe o público, recomenda a publicação e pode encerrar a relação. Sua coordenação é conveniente, mas também soberana dentro daquele espaço: não existe continuidade integral quando o operador retira a permissão.</p>
+<p>Uma arquitetura descentralizada pode reproduzir esse problema sob outros nomes. Distribuir servidores não basta se todos dependem do mesmo emissor de identidade, do mesmo registro ou da mesma política obrigatória. A pergunta correta não é quantas máquinas existem. É quem pode dizer “não” de forma final.</p>
+<h2>Quando o mensageiro responde pela mensagem</h2>
+<p>O mesmo limite aparece na responsabilidade jurídica da infraestrutura. Se um meio de transporte responde automaticamente por tudo o que seus usuários fazem, ele precisa reduzir o próprio risco. A resposta economicamente previsível é observar mais, bloquear antes e aceitar menos participantes.</p>
+<p>O sétimo princípio do <a href="https://www.cgi.br/resolucoes/documento/2009/CGI.br_Resolucao_2009_003">Decálogo do CGI.br</a> chama isso de <strong>inimputabilidade da rede</strong>: o combate a ilícitos deve atingir os responsáveis finais, não os meios de acesso e transporte, preservando liberdade, privacidade e direitos humanos.</p>
+<p>Essa posição não é exclusivamente brasileira. Os <a href="https://manilaprinciples.org/principles.html">Princípios de Manila</a> defendem proteção de intermediários por conteúdo de terceiros, rejeitam obrigação de monitoramento proativo e exigem que restrições sejam específicas, necessárias, proporcionais e sujeitas a devido processo. Na União Europeia, os artigos 4 a 8 do <a href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj">Digital Services Act</a> preservam regimes distintos para mera transmissão, armazenamento temporário e hospedagem, além de afastar uma obrigação geral de monitoramento.</p>
+<p>Esses documentos não têm a mesma natureza jurídica e não oferecem imunidade absoluta. Um provedor pode ter deveres próprios e responder por sua conduta. Uma plataforma que seleciona e recomenda conteúdo não desempenha a mesma função de uma rede que apenas transporta dados. O princípio importante é proporcional ao papel: responsabilidade deve acompanhar a ação e a capacidade específicas do agente, não irradiar indistintamente por todas as camadas.</p>
+<h2>Responsabilidade nas pontas</h2>
+<p>Impedir que a infraestrutura conheça ou julgue todas as comunicações não impede responsabilização criminal. Impede arquiteturalmente que o protocolo execute uma política universal de prevenção sobre elas.</p>
+<p>Autores continuam sujeitos à lei. Dispositivos podem preservar evidências. Vítimas e participantes podem denunciar condutas. Serviços podem definir políticas para relações das quais participam. Autoridades podem investigar alvos determinados e obter provas pelos meios legalmente disponíveis.</p>
+<p>O que deixa de existir é um atalho: transformar cada intermediário em vigia preventivo de todos os usuários. Esse limite não resolve o problema do abuso. Ele define onde a investigação precisa ocorrer e evita que a possibilidade de um crime converta toda comunicação em objeto permanente de inspeção.</p>
+<p>Uma arquitetura sempre distribui capacidades. Se o meio de transporte consegue ler, classificar e impedir qualquer relação, alguém poderá exigir que faça isso. Se não consegue, respostas legítimas precisam dirigir-se aos agentes e às evidências nas pontas.</p>
+<h2>Coordenação no PRP: regras comuns, decisões locais</h2>
+<p>O PRP compartilha regras, não uma autoridade cotidiana sobre as relações. Implementações independentes interpretam os mesmos formatos e verificam as mesmas condições de validade. Isso permite interoperabilidade sem entregar a uma implementação o poder de admitir ou excluir todos os participantes.</p>
+<p>Cada agente decide quais relações aceita e quais recursos disponibiliza nelas. Uma recusa vale para a relação em questão: não apaga a identidade do outro agente nem determina com quem ele pode se comunicar no restante da rede.</p>
+<p>A distinção é entre compreender uma mensagem e concordar com o que ela propõe. Dois agentes podem interpretar corretamente o mesmo pedido e chegar a decisões diferentes, de acordo com suas políticas. A regra comum permite que se entendam; não exige que façam as mesmas escolhas.</p>
+<h2>Coordenação verificável</h2>
+<p>O critério pode agora ser formulado com mais precisão. Coordenação sem soberania exige:</p>
+<ul>
+<li>regras públicas que implementações independentes possam executar;</li>
+<li>registros comuns para interpretar o protocolo, sem plano universal de</li>
+</ul>
+<p>numeração dos participantes;</p>
+<ul>
+<li>implementações independentes capazes de interoperar;</li>
+<li>políticas locais diferentes que possam coexistir;</li>
+<li>decisões de participação e acesso limitadas às relações de cada agente;</li>
+<li>separação entre definir o protocolo e autorizar seu uso;</li>
+<li>substituição de componentes sem perder toda a identidade e todas as relações.</li>
+</ul>
+<p>Essa arquitetura não elimina governança. Especificações ainda evoluem, implementações ainda divergem e políticas ainda precisam ser escolhidas. Ela muda o objeto da coordenação: em vez de concentrar decisões cotidianas sobre quem pode falar com quem, coordena formatos pelos quais agentes independentes podem interpretar mensagens, verificar sua validade e decidir como responder.</p>
+<p>No primeiro artigo, vimos que endereços e intermediários se tornaram pontos de controle sobre relações que a rede não compreende. O próximo passo é examinar o mecanismo mais direto dessa confusão: quando uma ordem dirigida a conteúdo ou conduta é executada contra um endereço e alcança tudo o que compartilha aquela localização.</p>
+<p>Coordenação é indispensável. Soberania técnica, não.</p></article>
+    
+  </div>
+</main>
+  <footer class="site-footer"><div class="shell">PRP Project · coordenação sem soberania central</div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"96f4ae8c6eaa4b259396d28f39ee7698"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coordination Without Sovereignty — PRP Journal</title>
+  <meta name="description" content="A global network needs common rules. It does not need an authority empowered to admit participants, control identities, or authorize publications.">
+  
+  <link rel="canonical" href="https://journal.prp-protocol.org/articles/coordination-without-sovereignty/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/"><span class="brand-mark">PRP/</span><span class="brand-name">PRP Journal</span></a>
+      <div class="header-actions"><nav class="language-nav" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/pt/">PT</a></nav></div>
+    </div>
+  </header>
+  <main class="article-shell">
+  <header class="article-header">
+    <span class="eyebrow">PRP Foundations · artigo 2</span>
+    <h1>Coordination Without Sovereignty</h1>
+    <p class="article-deck">A global network needs common rules. It does not need an authority empowered to admit participants, control identities, or authorize publications.</p>
+    <div class="article-meta"><span>PRP Project</span><a href="/pt/artigos/coordenacao-sem-soberania/">Português →</a></div>
+  </header>
+  <div class="article-layout">
+    <article class="prose"><p>A network without coordination is not a network. If two programs disagree on the format of a message, they cannot interpret it. If two networks use incompatible identifiers, they do not know where to forward data. If every implementation decides on its own what a signature means, none can verify the others.</p>
+<p>Interoperability requires agreements.</p>
+<figure><img src="/visuals/editorial/002-coordination-without-sovereignty.webp" alt="Independent teams test the interoperability of their implementations in a shared laboratory." loading="lazy"><figcaption>Independent teams test the interoperability of their implementations in a shared laboratory.</figcaption></figure>
+<p>This fact often leads to a hasty conclusion: if common rules are necessary, some authority must define and enforce them, and decide who may participate. But coordination and sovereignty are not the same. The former allows independent agents to cooperate. The latter grants someone ultimate power over the rest.</p>
+<p>The difference seems abstract until a technical rule becomes an instrument of admission, exclusion, or surveillance. Whoever controls an indispensable identifier can erase a presence. Whoever operates the only directory can make someone impossible to find. Whoever is legally liable for everything they carry gains an incentive to inspect every communication.</p>
+<p>The first article in this series showed how architecture shapes the interventions that are possible. This one takes a step back and asks how rules can be shared without creating a sovereign over the network.</p>
+<figure><img src="/visuals/en/local-coordination.svg" alt="A common protocol connects agents that maintain different local policies without central approval." loading="lazy"><figcaption>A common protocol connects agents that maintain different local policies without central approval.</figcaption></figure>
+<h2>A standard describes; it does not need to command</h2>
+<p>The Internet offers an imperfect but instructive example. The IETF produces technical specifications so that implementations developed by different people and organizations can work together.</p>
+<p>Its mission statement, <a href="https://datatracker.ietf.org/doc/rfc3935/">RFC 3935</a>, describes an open process, technical competence, rough consensus, and implementation experience. In defining a standard, the document draws a crucial distinction: a specification explains how to perform a function interoperably; it does not seek to mandate adoption or police its use.</p>
+<p>This does not eliminate power, disputes, or barriers to participation in standardization. Nor does it make every technical decision neutral. The RFC itself acknowledges choices such as decentralized control and empowering users at the edges. What the model demonstrates is more limited and valuable: shared rules can be published for independent adoption and implementation without every packet requiring permission from the organization that wrote them.</p>
+<p>A standard coordinates behavior. It does not need to command participants.</p>
+<h2>Many local decisions, one global network</h2>
+<p>Routing provides another example. The Internet consists of autonomous networks that choose how to connect and where to forward traffic. They share protocols and identifiers, but they do not consult a global controller before every decision.</p>
+<p>The Internet Society captures this property in the idea of <a href="https://www.internetsociety.org/resources/doc/2020/internet-impact-assessment-toolkit/critical-properties-of-the-internet/">decentralized management</a>: local decisions, common protocols, and a distributed system produce global reach.</p>
+<p>The example should not be romanticized. Dominant operators, resource registries, commercial agreements, and governments constrain real choices. Errors or malicious actions can propagate illegitimate routes. Distributed coordination does not mean an absence of dependencies; it means that no single operational decision is, by design, the universal authorization for the network to exist.</p>
+<p>This difference suggests a test. A coordinating component approaches sovereignty when its decision is simultaneously mandatory, exclusive, and irreplaceable. The harder that decision is to verify, challenge, or replace, the more power the component accumulates.</p>
+<h2>Common numbers do not require a worldwide participant registry</h2>
+<p>Today&#x27;s Internet combines different forms of numerical coordination. IANA maintains parameter registries so that, for example, a protocol code has the same meaning in independent implementations. It also coordinates the global spaces of IP addresses and autonomous system numbers, distributed hierarchically through regional registries. Both involve numbers, but their functions differ: one records the protocol vocabulary; the other allocates operational resources that must be globally unique. (<a href="https://www.iana.org/about">IANA</a>, <a href="https://www.iana.org/numbers">number resources</a>)</p>
+<p>PRP needs the first kind of coordination. Versions, cryptographic suites, types, and fields must have interoperable interpretations. Its specifications therefore maintain public, versioned, verifiable registries. Changing the meaning of a published assignment requires another value or another version.</p>
+<p>This does not create a worldwide numbering plan for agents. Self-certifying identities derive from cryptographic material itself. Relationship identifiers, session handles, and route selectors belong to qualified contexts and may repeat the same numerical value in independent contexts. There is no global allocation from which every person must obtain a number before participating.</p>
+<p>Current PRP specifications request no IANA action. This is not a promise of institutional isolation: future standardization may register parameters through public processes. The architectural property is different. Even if common codes are eventually published in an external registry, IANA does not thereby issue PRP identities, relationships, sessions, routes, or permissions.</p>
+<p>Operational independence and protocol coordination are compatible. Everyone must agree on what a field means; nobody must consult a worldwide registry to decide who may use that field in a local relationship.</p>
+<h2>When administration means authorization</h2>
+<p>Not every coordination center is avoidable. Global parameters must prevent collisions. Versions must be recognizable. Some relationships depend on statements made by third parties. The problem is not the mere existence of a specialized service, but the extent of its power.</p>
+<p>There is a difference between publishing a verifiable list and owning the only catalog; between attesting to a relationship and granting identity; between offering one discovery path and being able to make someone invisible through every path.</p>
+<p>Contemporary platforms frequently accumulate these functions. The same company creates the account, defines the name, stores the content, chooses the audience, recommends the publication, and can terminate the relationship. Its coordination is convenient, but also sovereign within that space: full continuity does not exist once the operator withdraws permission.</p>
+<p>A decentralized architecture can reproduce this problem under different names. Distributing servers is not enough if they all depend on the same identity issuer, the same registry, or the same mandatory policy. The right question is not how many machines exist. It is who can issue a final “no.”</p>
+<h2>When the messenger is liable for the message</h2>
+<p>The same boundary appears in the legal liability of infrastructure. If a means of transport is automatically liable for everything its users do, it must reduce its own risk. The economically predictable response is to observe more, block earlier, and accept fewer participants.</p>
+<p>The seventh principle of the <a href="https://www.cgi.br/resolucoes/documento/2009/CGI.br_Resolucao_2009_003">CGI.br Principles</a> calls this <strong>non-liability of the network</strong>: action against unlawful conduct should target those ultimately responsible, not the means of access and transport, while preserving freedom, privacy, and human rights.</p>
+<p>This position is not exclusively Brazilian. The <a href="https://manilaprinciples.org/principles.html">Manila Principles</a> advocate protection for intermediaries regarding third-party content, reject obligations of proactive monitoring, and require restrictions to be specific, necessary, proportionate, and subject to due process. In the European Union, Articles 4 through 8 of the <a href="https://eur-lex.europa.eu/eli/reg/2022/2065/oj">Digital Services Act</a> preserve distinct regimes for mere conduit, caching, and hosting, while also ruling out a general monitoring obligation.</p>
+<p>These documents do not have the same legal nature and do not provide absolute immunity. A provider may have duties of its own and be liable for its own conduct. A platform that selects and recommends content does not perform the same role as a network that merely carries data. The important principle is proportionality to role: responsibility should follow an agent&#x27;s specific actions and capabilities, rather than radiate indiscriminately through every layer.</p>
+<h2>Responsibility at the edges</h2>
+<p>Preventing infrastructure from knowing or judging every communication does not prevent criminal accountability. It architecturally prevents the protocol from enforcing a universal prevention policy over those communications.</p>
+<p>Authors remain subject to the law. Devices can preserve evidence. Victims and participants can report conduct. Services can define policies for relationships in which they take part. Authorities can investigate specific targets and obtain evidence through legally available means.</p>
+<p>What ceases to exist is a shortcut: turning every intermediary into a preventive monitor of every user. This boundary does not solve the problem of abuse. It defines where an investigation must occur and prevents the possibility of a crime from turning every communication into a permanent object of inspection.</p>
+<p>An architecture always distributes capabilities. If the means of transport can read, classify, and prevent any relationship, someone will be able to demand that it do so. If it cannot, legitimate responses must be directed at agents and evidence at the edges.</p>
+<h2>Coordination in PRP: common rules, local decisions</h2>
+<p>PRP shares rules, not an authority with day-to-day power over relationships. Independent implementations interpret the same formats and verify the same validity conditions. This enables interoperability without giving any one implementation the power to admit or exclude all participants.</p>
+<p>Each agent decides which relationships to accept and which resources to make available within them. A refusal applies to the relationship in question: it does not erase the other agent&#x27;s identity or determine whom that agent can communicate with elsewhere on the network.</p>
+<p>The distinction is between understanding a message and agreeing to what it proposes. Two agents can correctly interpret the same request and reach different decisions according to their policies. The common rule lets them understand each other; it does not require them to make the same choices.</p>
+<h2>Verifiable coordination</h2>
+<p>The criterion can now be stated more precisely. Coordination without sovereignty requires:</p>
+<ul>
+<li>public rules that independent implementations can execute;</li>
+<li>common registries for interpreting the protocol, without a universal</li>
+</ul>
+<p>numbering plan for participants;</p>
+<ul>
+<li>independent implementations capable of interoperating;</li>
+<li>different local policies that can coexist;</li>
+<li>participation and access decisions limited to each agent&#x27;s relationships;</li>
+<li>separation between defining the protocol and authorizing its use;</li>
+<li>replacement of components without losing every identity and relationship.</li>
+</ul>
+<p>This architecture does not eliminate governance. Specifications still evolve, implementations still diverge, and policies still need to be chosen. It changes the object of coordination: instead of concentrating day-to-day decisions about who may speak to whom, it coordinates formats through which independent agents can interpret messages, verify their validity, and decide how to respond.</p>
+<p>In the first article, we saw how addresses and intermediaries became control points over relationships the network does not understand. The next step is to examine the most direct mechanism behind that confusion: when an order aimed at content or conduct is enforced against an address and reaches everything that shares that location.</p>
+<p>Coordination is indispensable. Technical sovereignty is not.</p></article>
+    
+  </div>
+</main>
+  <footer class="site-footer"><div class="shell">PRP Project · coordination without central sovereignty</div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"96f4ae8c6eaa4b259396d28f39ee7698"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

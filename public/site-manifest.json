@@ -1,13 +1,19 @@
 {
   "target": "public",
   "public_url": "https://journal.prp-protocol.org",
-  "generated": "2026-08-21",
+  "generated": "2026-09-15",
   "articles": [
     {
       "slug": "ip-works"
     },
     {
+      "slug": "coordination-without-sovereignty"
+    },
+    {
       "slug": "o-ip-funciona"
+    },
+    {
+      "slug": "coordenacao-sem-soberania"
     }
   ]
 }
