@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When an Address Becomes an Instrument of Censorship — PRP Journal</title>
+  <meta name="description" content="An order can identify a target with legal precision and still be enforced through a technically indiscriminate rule.">
+  
+  <link rel="canonical" href="https://journal.prp-protocol.org/articles/when-an-address-becomes-an-instrument-of-censorship/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/"><span class="brand-mark">PRP/</span><span class="brand-name">PRP Journal</span></a>
+      <div class="header-actions"><nav class="language-nav" aria-label="Language"><a href="/" aria-current="page">EN</a><a href="/pt/">PT</a></nav></div>
+    </div>
+  </header>
+  <main class="article-shell">
+  <header class="article-header">
+    <span class="eyebrow">PRP Foundations · artigo 3</span>
+    <h1>When an Address Becomes an Instrument of Censorship</h1>
+    <p class="article-deck">An order can identify a target with legal precision and still be enforced through a technically indiscriminate rule.</p>
+    <div class="article-meta"><span>PRP Project</span><a href="/pt/artigos/quando-endereco-vira-instrumento-censura/">Português →</a></div>
+  </header>
+  <div class="article-layout">
+    <article class="prose"><p>A decision determines that certain content, service, or operation should no longer be accessible. The order proceeds to those who operate the network. Along the way, a decisive difference emerges: the legal document names one thing; the infrastructure can distinguish another.</p>
+<figure><img src="/visuals/editorial/003-address-censorship.webp" alt="A barrier applied to shared infrastructure affects many services while the intended target can move elsewhere." loading="lazy"><figcaption>A barrier applied to shared infrastructure affects many services while the intended target can move elsewhere.</figcaption></figure>
+<p>A person is not a domain. A video is not an IP address. A service is not a DNS response. Yet these identifiers frequently become the concrete objects of a block.</p>
+<p>This does not mean that every target is legitimate or that every restriction is invalid. It means that merits and mechanisms are different questions. Even when a decision is considered legitimate, we must still ask whether the technical rule reaches only what it intends to restrict.</p>
+<p>An order can be legally specific and technically indiscriminate.</p>
+<figure><img src="/visuals/en/order-rule.svg" alt="A decision about content is translated into a list of identifiers and then into a network rule whose effects can reach third parties." loading="lazy"><figcaption>A decision about content is translated into a list of identifiers and then into a network rule whose effects can reach third parties.</figcaption></figure>
+<h2>The order names one thing; the network sees another</h2>
+<p>Between the decision and the user lies a chain of translation. An authority identifies targets. An operational list collects domains, addresses, or other attributes. Coordinators distribute that list. Providers convert its entries into rules for resolvers, routers, firewalls, or inspection equipment.</p>
+<p>Each translation loses or adds meaning.</p>
+<p>A URL may name a specific page, but its path is protected inside an HTTPS session. An intermediary may see the domain but not the page. A domain may serve a website, email, and APIs. An IP address may serve thousands of domains, change occupants, or represent a CDN distributed across several regions. A port identifies a probable type of service, not the conduct performed through it.</p>
+<p>The network does not magically receive the semantics of the decision. It acts on the attributes made visible by its architectural position.</p>
+<h2>DNS: preventing a name from finding its destination</h2>
+<p>DNS translates names used by people and applications into information needed for communication. Interfering at this stage is a relatively simple way to reduce access: a resolver can omit the answer, return an error, provide false data, or redirect the user.</p>
+<p>The block targets the name, but its reach is not necessarily limited to the resource that motivated the order. Every service associated with the domain may be affected. Applications may also use another resolver, retain cached data, or discover the destination through another mechanism. The technique affects some users without making the target immobile.</p>
+<p>There is also a security cost. DNSSEC enables cryptographic validation of certain DNS data. A response fabricated by an intermediary does not become authentic merely because it was administratively authorized. <a href="https://www.rfc-editor.org/rfc/rfc7754.html">RFC 7754</a> observes that blocking mechanisms must also be evaluated for their impact on existing trust infrastructures.</p>
+<h2>IP: closing the building to prevent access to one room</h2>
+<p>Blocking an IP address operates at a different layer. A router or firewall can discard traffic addressed to it without knowing which domain, page, or object the user intended to access.</p>
+<p>This simplicity explains both the mechanism&#x27;s usefulness and its imprecision. Shared hosting, reverse proxies, CDNs, clouds, and NAT cause many agents to share addresses. Anycast allows the same address to lead to physically different instances. Infrastructure is allocated, released, and reused.</p>
+<p>The target can move. The other occupants do not control the list that retained the previous address.</p>
+<p>The result is an asymmetry: those seeking to circumvent the block have an incentive to move quickly; those who suffer collateral damage may not even know that their address appears in a secret or outdated rule.</p>
+<h2>The deeper the network looks, the more it must observe</h2>
+<p>A common response to imprecision is to demand greater granularity. If an IP address aggregates too much, an intermediary may try to classify a connection by SNI, certificate, protocol, headers, or content.</p>
+<p>But granularity is not free. It requires the network to observe more.</p>
+<p>SNI historically exposed the server name at the beginning of a TLS session. TLS 1.3 encrypted the certificate sent by the server, and ECH protects parts of the ClientHello that previously revealed the destination. When an attribute is no longer visible, the response may shift to less precise criteria, more intrusive inspection, or the endpoints themselves.</p>
+<p><a href="https://www.rfc-editor.org/rfc/rfc9505.html">RFC 9505</a>, which compiles techniques observed across different countries, shows this continuous movement among DNS, IP, SNI, protocol characteristics, and instrumentation of content distributors. <a href="https://www.rfc-editor.org/rfc/rfc7754.html">RFC 7754</a> warns that strategies which insert intermediaries into the end-to-end path can break security properties and make an authorized agent difficult to distinguish from an attacker.</p>
+<p>Greater precision in blocking can mean greater capacity for surveillance.</p>
+<h2>Blocking at scale in Brazil</h2>
+<p>In December 2025, Pedro de Botelho Marcos, Thiago Ayub, and Vinícius Anselmo presented an overview at IX Fórum of the orders received by one Brazilian provider. The corpus contained 304 orders issued between December 2022 and June 2025.</p>
+<p>The authors recorded two limitations: there was no guarantee that every ISP had received the same set, and the dataset contained no information about possible revocations. Their methodology compared responses from public and provider DNS resolvers and, for existing domains, also used ping and traceroute to evaluate connectivity.</p>
+<p>Results varied substantially across six vantage points—regional, national, mobile, institutional, and satellite networks. Based on shared addresses, the presentation also estimated very large numbers of domains <strong>potentially</strong> affected by IP blocks.</p>
+<p>“Potentially” is the central word. Associating many domains with one IP address demonstrates the surface for collateral damage; it does not prove that every domain was active, reachable, legitimate, and effectively unavailable on each network. Even so, it exposes the category error: an address can aggregate objects that the order never assessed individually. (<a href="https://minhaagenda.nic.br/files/apresentacao/arquivo/2392/16.pdf">IX Fórum 19 presentation</a>)</p>
+<p>The operational scale continues to grow. In its 2025 inspection report, Brazil&#x27;s telecommunications regulator, Anatel, declared 110 operations related to TV boxes, involving 28,190 IP addresses and 5,420 URLs. It also reported more than 17,000 domains associated with irregular betting and 1,955 websites and applications related to copyright. These figures describe identifiers processed; by themselves, they do not measure precision, duration, or effectiveness. (<a href="https://www.gov.br/anatel/pt-br/assuntos/noticias/anatel-divulga-relatorio-anual-de-fiscalizacao-2025-com-avancos-no-combate-a-pirataria-e-modernizacao-do-setor">Anatel report</a>)</p>
+<p>In 2026, the agency announced a public dashboard for administrative blocks of TV boxes. Transparency is part of operational security: adding entries without a verifiable procedure for review and removal turns a temporary measure into a persistent risk. (<a href="https://www.gov.br/anatel/pt-br/assuntos/noticias/anatel-lanca-painel-com-informacoes-sobre-bloqueios-administrativos-de-tv-boxes-ilegais">Anatel dashboard announcement</a>)</p>
+<h2>Six questions before installing a rule</h2>
+<p>RFC 7754 separates four criteria that are often conflated:</p>
+<ul>
+<li><strong>scope:</strong> which networks, territories, and users receive the block;</li>
+<li><strong>granularity:</strong> whether the identifier corresponds to the intended object or</li>
+</ul>
+<p>aggregates others;</p>
+<ul>
+<li><strong>effectiveness:</strong> for which population, and for how long, the technique</li>
+</ul>
+<p>reduces access;</p>
+<ul>
+<li><strong>security:</strong> which end-to-end guarantees the intervention weakens.</li>
+</ul>
+<p>Two operational questions must accompany them:</p>
+<ul>
+<li><strong>transparency:</strong> can the basis, list, executor, and duration be audited;</li>
+<li><strong>reversibility:</strong> who removes the rule, and how do they learn that an</li>
+</ul>
+<p>address, domain, or occupant has changed.</p>
+<p>Without these distinctions, a high count can be presented as effectiveness even when it measures only entries in a list. A target that reappears at another address can coexist with third parties still trapped by the old one.</p>
+<h2>The capability remains after the case</h2>
+<p>China and Russia have developed extensive systems for DNS and IP blocking and deep packet inspection. Brazil has different institutions, laws, and controls. Using techniques from the same family does not make political regimes equivalent or demonstrate equal intentions.</p>
+<p>But the architectural comparison remains valid: a capability installed for one category remains available for others. Equipment does not know the political legitimacy of its next operator. Processes, lists, and control points mature through use.</p>
+<p>The human-rights question posed by <a href="https://www.rfc-editor.org/rfc/rfc9620.html">RFC 9620</a> is deliberately architectural: does the protocol create choke points that are easy to use for censorship? Does it expose identifiers that allow traffic to be selected? Does it make clear when and why a resource was restricted?</p>
+<p>Technical design does not decide on its own who will govern. It decides which powers a ruler will find ready to use.</p>
+<h2>The address is not the object</h2>
+<p>PRP separates identity from location. A verifiable object does not cease to be the same object because it was moved, replicated, or obtained from another host. A relationship does not belong to a server&#x27;s current address. Discovery, transport, and verification are distinct functions.</p>
+<p>This separation does not make PRP immune to coercion. Links can be disrupted, hosts can be seized, and agents can face sanctions. Nor does it make every published object legitimate. Local policies continue to act on verifiable objects and relationships.</p>
+<p>What changes is the architectural correspondence. An address ceases to be an identity. Transport does not need to interpret content in order to forward it. Moving an object does not destroy its verifiability, and blocking one location is not equivalent to universally revoking the object or agent.</p>
+<p>This reduces the usefulness of treating shared infrastructure as a substitute for the actual target. It also makes the boundary explicit: a restriction on an object, relationship, or agent must name and justify that object, relationship, or agent—not merely the circumstance of where its data happened to be yesterday.</p>
+<p>The next article takes another step. If today&#x27;s Internet mainly knows <strong>where</strong> to look, how can an architecture verify <strong>what</strong> it received without giving a central catalog the power to decide what exists?</p></article>
+    
+  </div>
+</main>
+  <footer class="site-footer"><div class="shell">PRP Project · coordination without central sovereignty</div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"96f4ae8c6eaa4b259396d28f39ee7698"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

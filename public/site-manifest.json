@@ -1,7 +1,7 @@
 {
   "target": "public",
   "public_url": "https://journal.prp-protocol.org",
-  "generated": "2026-09-15",
+  "generated": "2026-10-01",
   "articles": [
     {
       "slug": "ip-works"
@@ -10,10 +10,16 @@
       "slug": "coordination-without-sovereignty"
     },
     {
+      "slug": "when-an-address-becomes-an-instrument-of-censorship"
+    },
+    {
       "slug": "o-ip-funciona"
     },
     {
       "slug": "coordenacao-sem-soberania"
+    },
+    {
+      "slug": "quando-endereco-vira-instrumento-censura"
     }
   ]
 }

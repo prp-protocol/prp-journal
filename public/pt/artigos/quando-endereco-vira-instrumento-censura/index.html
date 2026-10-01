@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quando um endereço vira instrumento de censura — PRP Journal</title>
+  <meta name="description" content="Uma ordem pode identificar um alvo com precisão jurídica e ainda ser executada por uma regra tecnicamente indiscriminada.">
+  
+  <link rel="canonical" href="https://journal.prp-protocol.org/pt/artigos/quando-endereco-vira-instrumento-censura/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/pt/"><span class="brand-mark">PRP/</span><span class="brand-name">PRP Journal</span></a>
+      <div class="header-actions"><nav class="language-nav" aria-label="Language"><a href="/">EN</a><a href="/pt/" aria-current="page">PT</a></nav></div>
+    </div>
+  </header>
+  <main class="article-shell">
+  <header class="article-header">
+    <span class="eyebrow">Fundamentos do PRP · artigo 3</span>
+    <h1>Quando um endereço vira instrumento de censura</h1>
+    <p class="article-deck">Uma ordem pode identificar um alvo com precisão jurídica e ainda ser executada por uma regra tecnicamente indiscriminada.</p>
+    <div class="article-meta"><span>PRP Project</span><a href="/articles/when-an-address-becomes-an-instrument-of-censorship/">English →</a></div>
+  </header>
+  <div class="article-layout">
+    <article class="prose"><p>Uma decisão determina que certo conteúdo, serviço ou operação deixe de ser acessível. A ordem segue para quem opera a rede. Nesse percurso, uma diferença decisiva aparece: o documento jurídico nomeia uma coisa; a infraestrutura consegue distinguir outra.</p>
+<figure><img src="/visuals/editorial/003-address-censorship.webp" alt="Uma barreira aplicada ao caminho compartilhado atinge muitos serviços, enquanto o alvo pretendido pode mudar de localização." loading="lazy"><figcaption>Uma barreira aplicada ao caminho compartilhado atinge muitos serviços, enquanto o alvo pretendido pode mudar de localização.</figcaption></figure>
+<p>Uma pessoa não é um domínio. Um vídeo não é um endereço IP. Um serviço não é uma resposta DNS. Mesmo assim, esses identificadores frequentemente se tornam os objetos concretos do bloqueio.</p>
+<p>Isso não significa que todo alvo seja legítimo ou que toda restrição seja inválida. Significa que mérito e mecanismo são perguntas diferentes. Mesmo quando uma decisão é considerada legítima, ainda é necessário perguntar se a regra técnica alcança somente o que ela pretende restringir.</p>
+<p>Uma ordem pode ser juridicamente específica e tecnicamente indiscriminada.</p>
+<figure><img src="/visuals/pt/ordem-regra.svg" alt="Uma decisão sobre conteúdo é traduzida em uma lista de identificadores e depois em uma regra de rede cujo efeito pode alcançar terceiros." loading="lazy"><figcaption>Uma decisão sobre conteúdo é traduzida em uma lista de identificadores e depois em uma regra de rede cujo efeito pode alcançar terceiros.</figcaption></figure>
+<h2>A ordem nomeia uma coisa; a rede enxerga outra</h2>
+<p>Entre a decisão e o usuário existe uma cadeia de tradução. Uma autoridade identifica alvos. Uma lista operacional reúne domínios, endereços ou outros atributos. Coordenadores distribuem essa lista. Provedores convertem seus itens em regras compatíveis com resolvedores, roteadores, firewalls ou equipamentos de inspeção.</p>
+<p>Cada tradução perde ou acrescenta significado.</p>
+<p>Uma URL pode nomear uma página específica, mas seu caminho fica protegido dentro de uma sessão HTTPS. O intermediário talvez enxergue o domínio, mas não a página. Um domínio pode reunir site, correio e APIs. Um endereço IP pode servir a milhares de domínios, mudar de ocupante ou representar uma CDN distribuída em diversas regiões. Uma porta identifica um tipo provável de serviço, não a conduta realizada por ele.</p>
+<p>A rede não recebe magicamente a semântica da decisão. Ela age sobre os atributos que sua posição arquitetural torna visíveis.</p>
+<h2>DNS: impedir que o nome encontre o destino</h2>
+<p>O DNS traduz nomes utilizados por pessoas e aplicações em informações necessárias à comunicação. Interferir nessa etapa é uma maneira relativamente simples de reduzir o acesso: o resolvedor pode omitir a resposta, devolver um erro, fornecer dados falsos ou redirecionar o usuário.</p>
+<p>O bloqueio é dirigido ao nome, mas seu alcance não se limita necessariamente ao recurso que motivou a ordem. Todos os serviços associados ao domínio podem ser afetados. Aplicações também podem usar outro resolvedor, manter dados em cache ou descobrir o destino por outro mecanismo. A técnica produz efeito para parte dos usuários sem tornar o alvo imóvel.</p>
+<p>Há ainda um custo de segurança. O DNSSEC permite validar criptograficamente determinados dados do DNS. Uma resposta fabricada pelo intermediário não se torna autêntica apenas porque foi autorizada administrativamente. A <a href="https://www.rfc-editor.org/rfc/rfc7754.html">RFC 7754</a> observa que mecanismos de bloqueio precisam ser avaliados também pelo impacto que causam nas infraestruturas de confiança existentes.</p>
+<h2>IP: fechar o prédio para impedir acesso a uma sala</h2>
+<p>Bloquear um endereço IP atua em camada diferente. O roteador ou firewall pode descartar tráfego destinado ao endereço sem saber qual domínio, página ou objeto o usuário pretendia acessar.</p>
+<p>Essa simplicidade explica tanto a utilidade quanto a imprecisão do mecanismo. Hospedagem compartilhada, proxies reversos, CDNs, nuvens e NAT fazem muitos agentes dividirem endereços. Anycast permite que o mesmo endereço conduza a instâncias fisicamente distintas. Infraestrutura é alocada, liberada e reutilizada.</p>
+<p>O alvo pode migrar. Os demais ocupantes não controlam a lista que reteve o endereço anterior.</p>
+<p>O resultado é uma assimetria: quem pretende contornar o bloqueio tem incentivo para mudar rapidamente de localização; quem recebeu o dano colateral pode nem saber que seu endereço está em uma regra sigilosa ou desatualizada.</p>
+<h2>Quanto mais fundo se olha, mais a rede precisa observar</h2>
+<p>Uma resposta comum à imprecisão é pedir mais granularidade. Se o IP agrega demais, o intermediário pode tentar classificar a conexão por SNI, certificado, protocolo, cabeçalhos ou conteúdo.</p>
+<p>Mas granularidade não aparece de graça. Ela exige que a rede observe mais.</p>
+<p>O SNI historicamente expôs o nome do servidor no início de uma sessão TLS. O TLS 1.3 passou a cifrar o certificado enviado pelo servidor, e o ECH protege partes do ClientHello que antes revelavam o destino. Quando um atributo deixa de estar visível, a resposta pode migrar para critérios menos precisos, para inspeção mais intrusiva ou para as próprias pontas.</p>
+<p>A <a href="https://www.rfc-editor.org/rfc/rfc9505.html">RFC 9505</a>, que reúne técnicas observadas em diferentes países, mostra esse movimento contínuo entre DNS, IP, SNI, características de protocolo e instrumentação dos distribuidores de conteúdo. A <a href="https://www.rfc-editor.org/rfc/rfc7754.html">RFC 7754</a> alerta que estratégias que inserem intermediários no caminho fim a fim podem romper propriedades de segurança e tornar difícil distinguir um agente autorizado de um atacante.</p>
+<p>Mais precisão para bloquear pode significar mais capacidade para vigiar.</p>
+<h2>O bloqueio brasileiro em escala</h2>
+<p>Em dezembro de 2025, Pedro de Botelho Marcos, Thiago Ayub e Vinícius Anselmo apresentaram no IX Fórum um panorama das ordens recebidas por um provedor brasileiro. O corpus continha 304 ordens entre dezembro de 2022 e junho de 2025.</p>
+<p>Os próprios autores registraram dois limites: não há garantia de que todos os ISPs tenham recebido o mesmo conjunto, e a base não continha informações sobre eventuais revogações. A metodologia comparou respostas de DNS público e de provedores e, para domínios existentes, utilizou também ping e traceroute para avaliar conectividade.</p>
+<p>Os resultados variaram intensamente entre seis pontos de medição — regional, nacionais, móvel, institucional e satélite. A apresentação também estimou, a partir dos endereços compartilhados, quantidades muito elevadas de domínios <strong>potencialmente</strong> afetados por bloqueios de IP.</p>
+<p>“Potencialmente” é a palavra central. A associação de muitos domínios ao mesmo IP demonstra a superfície de dano colateral; não prova que todos estavam ativos, alcançáveis, legítimos e efetivamente indisponíveis em cada rede. Ainda assim, ela evidencia o erro de categoria: um endereço pode agregar objetos que a ordem jamais avaliou individualmente. (<a href="https://minhaagenda.nic.br/files/apresentacao/arquivo/2392/16.pdf">Apresentação do IX Fórum 19</a>)</p>
+<p>A escala operacional continua crescendo. Em seu relatório de fiscalização de 2025, a Anatel declarou 110 operações relacionadas a TV Boxes, envolvendo 28.190 IPs e 5.420 URLs. Informou também mais de 17 mil domínios ligados a apostas irregulares e 1.955 sites e aplicativos relacionados a direitos autorais. Esses números descrevem identificadores processados, não medem por si sós precisão, duração ou eficácia. (<a href="https://www.gov.br/anatel/pt-br/assuntos/noticias/anatel-divulga-relatorio-anual-de-fiscalizacao-2025-com-avancos-no-combate-a-pirataria-e-modernizacao-do-setor">Relatório da Anatel</a>)</p>
+<p>Em 2026, a Agência anunciou um painel público para bloqueios administrativos de TV Boxes. Transparência é parte da segurança operacional: inclusão sem procedimento verificável de revisão e retirada transforma uma medida temporária em risco persistente. (<a href="https://www.gov.br/anatel/pt-br/assuntos/noticias/anatel-lanca-painel-com-informacoes-sobre-bloqueios-administrativos-de-tv-boxes-ilegais">Painel da Anatel</a>)</p>
+<h2>Seis perguntas antes de instalar uma regra</h2>
+<p>A RFC 7754 separa quatro critérios que frequentemente são confundidos:</p>
+<ul>
+<li><strong>escopo:</strong> quais redes, territórios e usuários recebem o bloqueio;</li>
+<li><strong>granularidade:</strong> se o identificador corresponde ao objeto pretendido ou</li>
+</ul>
+<p>agrega outros;</p>
+<ul>
+<li><strong>eficácia:</strong> para qual população e por quanto tempo a técnica reduz acesso;</li>
+<li><strong>segurança:</strong> quais garantias fim a fim são enfraquecidas pela intervenção.</li>
+</ul>
+<p>Duas perguntas operacionais precisam acompanhá-los:</p>
+<ul>
+<li><strong>transparência:</strong> fundamento, lista, executor e duração podem ser auditados;</li>
+<li><strong>reversibilidade:</strong> quem remove a regra e como descobre que endereço, domínio</li>
+</ul>
+<p>ou ocupante mudou.</p>
+<p>Sem essas distinções, uma contagem alta pode ser apresentada como eficácia mesmo quando mede apenas entradas em uma lista. Um alvo que reaparece em outro endereço pode coexistir com terceiros que permanecem presos ao endereço antigo.</p>
+<h2>A capacidade permanece depois do caso</h2>
+<p>China e Rússia desenvolveram sistemas extensos de DNS, IP e inspeção profunda. O Brasil possui instituições, leis e controles diferentes. Usar técnicas da mesma família não torna regimes equivalentes, nem demonstra intenções iguais.</p>
+<p>Mas a comparação arquitetural continua válida: uma capacidade instalada para uma categoria permanece disponível para outras. Equipamentos não conhecem a legitimidade política do próximo operador. Processos, listas e pontos de controle amadurecem pelo uso.</p>
+<p>A pergunta de direitos humanos formulada pela <a href="https://www.rfc-editor.org/rfc/rfc9620.html">RFC 9620</a> é deliberadamente arquitetural: o protocolo cria pontos de estrangulamento fáceis de usar para censura? Expõe identificadores que permitem selecionar tráfego? Torna aparente quando e por que um recurso foi restringido?</p>
+<p>O desenho técnico não decide sozinho quem governará. Decide quais poderes um governante encontrará prontos.</p>
+<h2>O endereço não é o objeto</h2>
+<p>O PRP separa identidade de localização. Um objeto verificável não deixa de ser o mesmo objeto porque foi movido, replicado ou obtido por outro hospedeiro. Uma relação não pertence ao endereço momentâneo de um servidor. Descoberta, transporte e verificação são funções distintas.</p>
+<p>Essa separação não torna o PRP imune a coerção. Links podem ser interrompidos, hospedeiros podem ser apreendidos e agentes podem sofrer sanções. Ela também não transforma todo objeto publicado em legítimo. Políticas locais continuam atuando sobre objetos e relações verificáveis.</p>
+<p>O que muda é a correspondência arquitetural. Endereço deixa de ser identidade. Transporte não precisa interpretar conteúdo para encaminhá-lo. Mover um objeto não destrói sua verificabilidade, e bloquear uma localização não equivale a revogar universalmente o objeto ou o agente.</p>
+<p>Isso reduz a utilidade de tratar infraestrutura compartilhada como substituta do alvo real. Também torna explícito o limite: uma restrição sobre objeto, relação ou agente precisa nomear e justificar esse objeto, relação ou agente — não apenas a circunstância de onde seus dados estavam ontem.</p>
+<p>O próximo artigo dará mais um passo. Se a Internet atual sabe principalmente <strong>onde</strong> procurar, como uma arquitetura pode verificar <strong>o quê</strong> recebeu sem entregar a um catálogo central o poder de decidir o que existe?</p></article>
+    
+  </div>
+</main>
+  <footer class="site-footer"><div class="shell">PRP Project · coordenação sem soberania central</div></footer>
+  <!-- Cloudflare Web Analytics -->
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"96f4ae8c6eaa4b259396d28f39ee7698"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 790" role="img" aria-labelledby="t d">
+  <title id="t">A rule aimed at a shared address blocks the target and third-party services</title>
+  <desc id="d">The order identifies one target, but translating it into a shared address causes the network rule to affect two services that were not targeted.</desc>
+  <rect width="1400" height="790" fill="#f8f5ee"/>
+  <g font-family="system-ui,sans-serif" fill="#18211f">
+    <text x="70" y="70" font-size="31" font-weight="700">The order names one thing. The network blocks a set.</text>
+    <text x="70" y="108" font-size="20" fill="#5f6965">An infrastructure identifier can combine the target and third parties.</text>
+    <g text-anchor="middle">
+      <rect x="55" y="270" width="235" height="180" rx="18" fill="#fffdf8" stroke="#c4492d" stroke-width="3"/>
+      <circle cx="172" cy="321" r="22" fill="none" stroke="#c4492d" stroke-width="4"/><circle cx="172" cy="321" r="8" fill="#c4492d"/>
+      <text x="172" y="375" font-size="19" font-weight="700" fill="#87301e">LEGAL TARGET</text><text x="172" y="410" font-size="20">content · service</text>
+      <rect x="355" y="270" width="235" height="180" rx="18" fill="#fffdf8" stroke="#c8c1b3" stroke-width="2"/>
+      <path d="M447 305h52l18 18-18 18h-52l-17-18z" fill="none" stroke="#18211f" stroke-width="3"/><circle cx="455" cy="323" r="4" fill="#18211f"/>
+      <text x="472" y="375" font-size="19" font-weight="700">IDENTIFIER</text><text x="472" y="410" font-size="20">URL · domain · IP</text>
+      <rect x="655" y="270" width="235" height="180" rx="18" fill="#0d6b62"/>
+      <path d="M735 310h74M735 327h74M735 344h74" stroke="white" stroke-width="4"/><circle cx="720" cy="310" r="4" fill="white"/><circle cx="720" cy="327" r="4" fill="white"/><circle cx="720" cy="344" r="4" fill="white"/>
+      <text x="772" y="385" font-size="19" font-weight="700" fill="white">NETWORK RULE</text><text x="772" y="418" font-size="20" fill="white">block the address</text>
+    </g>
+    <g stroke="#18211f" stroke-width="5" fill="none"><path d="M290 360h65"/><path d="M590 360h65"/><path d="M890 360h70"/></g>
+    <g fill="#18211f"><path d="M345 347l20 13-20 13z"/><path d="M645 347l20 13-20 13z"/><path d="M950 347l20 13-20 13z"/></g>
+    <g>
+      <rect x="970" y="170" width="365" height="445" rx="24" fill="#fffdf8" stroke="#89918d" stroke-width="3"/>
+      <text x="1152" y="213" text-anchor="middle" font-size="18" font-weight="700" fill="#5f6965">SAME SHARED ADDRESS</text>
+      <rect x="1010" y="240" width="285" height="88" rx="14" fill="#f3d5cb" stroke="#c4492d" stroke-width="3"/>
+      <circle cx="1053" cy="284" r="20" fill="none" stroke="#c4492d" stroke-width="4"/><circle cx="1053" cy="284" r="7" fill="#c4492d"/>
+      <text x="1090" y="279" font-size="19" font-weight="700" fill="#87301e">INTENDED TARGET</text><text x="1090" y="306" font-size="17" fill="#5f6965">service A</text>
+      <rect x="1010" y="354" width="285" height="88" rx="14" fill="#e6efe9" stroke="#709081" stroke-width="2"/>
+      <rect x="1035" y="376" width="38" height="38" rx="5" fill="none" stroke="#0d6b62" stroke-width="3"/><path d="M1043 407l9-10 7 6 7-9" fill="none" stroke="#0d6b62" stroke-width="3"/>
+      <text x="1090" y="393" font-size="19" font-weight="700">THIRD PARTY</text><text x="1090" y="420" font-size="17" fill="#5f6965">service B</text>
+      <rect x="1010" y="468" width="285" height="88" rx="14" fill="#e6efe9" stroke="#709081" stroke-width="2"/>
+      <path d="M1037 512h34v-29h-34zM1045 483v-8h18v8" fill="none" stroke="#0d6b62" stroke-width="3"/>
+      <text x="1090" y="507" font-size="19" font-weight="700">THIRD PARTY</text><text x="1090" y="534" font-size="17" fill="#5f6965">service C</text>
+      <path d="M990 225L1315 580M1315 225L990 580" stroke="#c4492d" stroke-width="17" stroke-linecap="round" opacity=".78"/>
+      <rect x="1044" y="577" width="217" height="56" rx="28" fill="#c4492d"/><text x="1152" y="613" text-anchor="middle" font-size="20" font-weight="800" fill="white">ALL BLOCKED</text>
+    </g>
+    <path d="M172 474C390 650 790 665 1045 304" fill="none" stroke="#c4492d" stroke-width="3" stroke-dasharray="9 8"/>
+    <text x="70" y="738" font-size="24" font-weight="700" fill="#0d6b62">Legal precision does not ensure technical precision.</text>
+  </g>
+</svg>
